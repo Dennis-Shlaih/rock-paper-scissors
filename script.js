@@ -1,18 +1,23 @@
 function generateComputerChoice() {
-  let choice;
+  let computerChoice;
   let randomNumber = Math.floor((Math.random() * 3) + 1);
   switch(randomNumber) {
     case 1:
-      choice = "Rock";
+      computerChoice = "Rock";
       break;
     case 2:
-      choice = "Paper";
+      computerChoice = "Paper";
       break;
     default:
-      choice = "Scissors";
+      computerChoice = "Scissors";
   }
-  console.log(randomNumber);
-  console.log(choice);
-  return choice;
+  return computerChoice;
 }
-generateComputerChoice();
+
+function getUserChoice() {
+  let userChoice = prompt("Enter either \"Rock\", \"Paper\", or \"Scissors\"").toLowerCase();
+  formattedUserChoice = userChoice.substring(0, 1).toUpperCase() + userChoice.substring(1);
+  return formattedUserChoice;
+}
+
+console.log(getUserChoice());
