@@ -20,7 +20,7 @@ function getUserChoice() {
   return formattedUserChoice;
 }
 
-function playRound(userScore, computerScore) {
+function playRound() {
   let userChoice = getUserChoice();
   let computerChoice = generateComputerChoice();
   if (userChoice !== "Rock" && userChoice !== "Paper" && userChoice !== "Scissors") {
@@ -43,4 +43,21 @@ function playRound(userScore, computerScore) {
   }
 }
 
-playRound();
+function playGame() {
+  for (let round = 1; round <= 5; round++ ) {
+    playRound();
+  }
+  if (userScore > computerScore) {
+    console.log(`You won ${userScore}-${computerScore}!`);
+  }
+  else if (userScore < computerScore) {
+    console.log(`You lost ${userScore}-${computerScore}!`);
+  } 
+  else {
+    console.log(`It's a draw ${userScore}-${computerScore}`);
+  }
+}
+
+let userScore = 0;
+let computerScore = 0;
+playGame();
